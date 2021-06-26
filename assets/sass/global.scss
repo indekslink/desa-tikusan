@@ -1,0 +1,8 @@
+@use 'dekstop';
+@use 'tablet';
+@use 'mobile';
+@use 'mixins';
+
+* {
+  @include mixins.fontMontserrat;
+}
