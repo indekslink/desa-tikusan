@@ -1,0 +1,164 @@
+@use 'mixins';
+#navbar {
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    @include mixins.fontFjalla;
+    font-size: 25px;
+    img {
+      margin-right: 10px;
+    }
+  }
+  a:not(.navbar-brand) {
+    font-size: 14px;
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+section {
+  overflow: hidden;
+  &#home {
+    .carousel-inner {
+      background: #f8f9fa;
+      border-radius: 0 0 20% 20%;
+      img {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+  &:not(#home) {
+    padding: 3rem 0;
+  }
+
+  .title-section {
+    @include mixins.fontFredoka;
+    font-size: 40px;
+    text-align: center;
+  }
+  .content-section {
+    padding-top: 1.5rem;
+    font-size: 14px;
+  }
+  &#visi {
+    .content-section {
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+
+    margin: 0 auto;
+  }
+  &#misi {
+    .accordion-item,
+    .accordion-button {
+      background: transparent;
+    }
+    .accordion-button {
+      padding: 1rem;
+      &:focus {
+        border-color: #ff919c;
+
+        box-shadow: 0 0 0 0.25rem #ff919c;
+      }
+      &:not(.collapsed) {
+        color: black;
+        font-weight: bold;
+        background-color: #ffdfe2;
+      }
+    }
+    .accordion-body {
+      padding: 1.5rem;
+      font-size: 14px;
+      .sub-title {
+        margin-bottom: 1.5rem;
+
+        span {
+          font-size: 15px;
+          padding-left: 10px;
+
+          border-left: 4px solid #ff919c;
+        }
+      }
+      p {
+        display: flex;
+        margin-bottom: 0.5rem;
+        &::before {
+          font-family: "Font Awesome 5 Free";
+          content: "\f054";
+          display: inline-block;
+          padding-right: 5px;
+          vertical-align: middle;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  &#galeri {
+    background: #eee;
+    .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+      color: black;
+      font-weight: bold;
+      background-color: #ff919c;
+    }
+    .nav-link {
+      color: black;
+      &:focus,
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+a.parent-lightbox {
+  height: 100%;
+  overflow: hidden;
+
+  position: relative;
+  &::after {
+    transition: background 0.5s ease;
+    position: absolute;
+    top: 0;
+    content: "";
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    left: 0;
+    background: transparent;
+  }
+  &::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f06e";
+    color: white;
+    display: none;
+    font-size: 30px;
+    z-index: 2;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+  }
+  &:hover {
+    &::before {
+      display: inline-block;
+    }
+    &::after {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    img.image-lightbox {
+      transition: 0.5s ease;
+      transform: scale(1.5);
+    }
+  }
+  // img.image-lightbox {
+  //   transition: 0.5s;
+  //   &:hover {
+  //     transform: scale(1.5);
+  //   }
+  // }
+}

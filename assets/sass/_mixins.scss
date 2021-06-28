@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
 @mixin fontMontserrat {
   font-family: "Montserrat", sans-serif;
+}
+@mixin fontFjalla {
+  font-family: "Fjalla One", sans-serif;
+}
+@mixin fontFredoka {
+  font-family: "Fredoka One", cursive;
+}
+
+@mixin boxShadow {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7), -5px 0px 10px rgba(0, 0, 0, 0.7);
 }

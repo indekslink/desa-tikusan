@@ -3,6 +3,6 @@
 @use 'mobile';
 @use 'mixins';
 
-* {
+body {
   @include mixins.fontMontserrat;
 }

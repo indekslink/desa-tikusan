@@ -1,5 +1,151 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-* {
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+#navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 25px;
+}
+#navbar .navbar-brand img {
+  margin-right: 10px;
+}
+#navbar a:not(.navbar-brand) {
+  font-size: 14px;
+}
+#navbar a:not(.navbar-brand).active {
+  font-weight: bold;
+}
+
+section {
+  overflow: hidden;
+}
+section#home .carousel-inner {
+  background: #f8f9fa;
+  border-radius: 0 0 20% 20%;
+}
+section#home .carousel-inner img {
+  width: 100%;
+  margin: 0 auto;
+}
+section:not(#home) {
+  padding: 3rem 0;
+}
+section .title-section {
+  font-family: "Fredoka One", cursive;
+  font-size: 40px;
+  text-align: center;
+}
+section .content-section {
+  padding-top: 1.5rem;
+  font-size: 14px;
+}
+section#visi {
+  margin: 0 auto;
+}
+section#visi .content-section {
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+section#misi .accordion-item,
+section#misi .accordion-button {
+  background: transparent;
+}
+section#misi .accordion-button {
+  padding: 1rem;
+}
+section#misi .accordion-button:focus {
+  border-color: #ff919c;
+  box-shadow: 0 0 0 0.25rem #ff919c;
+}
+section#misi .accordion-button:not(.collapsed) {
+  color: black;
+  font-weight: bold;
+  background-color: #ffdfe2;
+}
+section#misi .accordion-body {
+  padding: 1.5rem;
+  font-size: 14px;
+}
+section#misi .accordion-body .sub-title {
+  margin-bottom: 1.5rem;
+}
+section#misi .accordion-body .sub-title span {
+  font-size: 15px;
+  padding-left: 10px;
+  border-left: 4px solid #ff919c;
+}
+section#misi .accordion-body p {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+section#misi .accordion-body p::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  display: inline-block;
+  padding-right: 5px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+section#galeri {
+  background: #eee;
+}
+section#galeri .nav-pills .nav-link.active,
+section#galeri .nav-pills .show > .nav-link {
+  color: black;
+  font-weight: bold;
+  background-color: #ff919c;
+}
+section#galeri .nav-link {
+  color: black;
+}
+section#galeri .nav-link:focus, section#galeri .nav-link:hover {
+  font-weight: bold;
+}
+
+a.parent-lightbox {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+a.parent-lightbox::after {
+  transition: background 0.5s ease;
+  position: absolute;
+  top: 0;
+  content: "";
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  left: 0;
+  background: transparent;
+}
+a.parent-lightbox::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  color: white;
+  display: none;
+  font-size: 30px;
+  z-index: 2;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+a.parent-lightbox:hover::before {
+  display: inline-block;
+}
+a.parent-lightbox:hover::after {
+  background: rgba(0, 0, 0, 0.5);
+}
+a.parent-lightbox:hover img.image-lightbox {
+  transition: 0.5s ease;
+  transform: scale(1.5);
+}
+
+body {
   font-family: "Montserrat", sans-serif;
 }
 
