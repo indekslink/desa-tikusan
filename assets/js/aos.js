@@ -23,5 +23,5 @@ galleryNavItem.forEach((gn, i) => {
 });
 
 AOS.init({
-  offset: 150,
+  once: true,
 });
