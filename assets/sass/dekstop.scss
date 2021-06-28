@@ -50,6 +50,34 @@ section {
 
     margin: 0 auto;
   }
+  &#kontak {
+    ul {
+      height: 100%;
+      justify-content: space-evenly;
+      li {
+        border: none;
+        padding: 0.5rem 0 !important;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 10px;
+          width: 45px;
+          height: 45px;
+        }
+        .text {
+          .title {
+            font-weight: bold;
+            font-size: 18px;
+          }
+          .link a {
+            color: red;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
   &#misi {
     .accordion-item,
     .accordion-button {
@@ -155,10 +183,18 @@ a.parent-lightbox {
       transform: scale(1.5);
     }
   }
-  // img.image-lightbox {
-  //   transition: 0.5s;
-  //   &:hover {
-  //     transform: scale(1.5);
-  //   }
-  // }
+}
+a.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 99;
+  i {
+    pointer-events: none;
+  }
+  &.show {
+    opacity: 1;
+  }
 }

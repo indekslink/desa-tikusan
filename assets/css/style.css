@@ -48,6 +48,30 @@ section#visi .content-section {
   letter-spacing: 1.5px;
   text-align: center;
 }
+section#kontak ul {
+  height: 100%;
+  justify-content: space-evenly;
+}
+section#kontak ul li {
+  border: none;
+  padding: 0.5rem 0 !important;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+section#kontak ul li img {
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+}
+section#kontak ul li .text .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+section#kontak ul li .text .link a {
+  color: red;
+  font-size: 13px;
+}
 section#misi .accordion-item,
 section#misi .accordion-button {
   background: transparent;
@@ -143,6 +167,21 @@ a.parent-lightbox:hover::after {
 a.parent-lightbox:hover img.image-lightbox {
   transition: 0.5s ease;
   transform: scale(1.5);
+}
+
+a.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 99;
+}
+a.to-top i {
+  pointer-events: none;
+}
+a.to-top.show {
+  opacity: 1;
 }
 
 body {

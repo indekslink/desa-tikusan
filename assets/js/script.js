@@ -4,7 +4,7 @@ document.getElementById("home").style.marginTop = navbar.clientHeight + "px";
 function realtimeHeightSlider(w) {
   imgSlider.forEach((img) => {
     const height = `calc(100vh - ${navbar.clientHeight}px)`;
-    img.style.height = w > 767 ? height : "60vmin";
+    img.style.height = w > 767 ? height : "80vmin";
   });
 }
 
@@ -47,3 +47,9 @@ $("img.image-lightbox").each((i, el) => {
     .parent()
     .prepend($(elLightBox(href, lightBoxId)).html(el));
 });
+
+window.onscroll = () => {
+  document
+    .querySelector(".to-top")
+    .classList.toggle("show", window.scrollY > 100);
+};
