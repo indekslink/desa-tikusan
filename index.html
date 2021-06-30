@@ -37,10 +37,16 @@
     data-bs-target="#navbar"
     data-bs-offset="100"
   >
-    <a
-      
-      href="#home"
-      class="btn btn-xl to-top btn-danger btn-lg link-scroll"
+    <div class="loading">
+      <div class="logo">
+        <img src="./assets/image/logo-desa.png" alt="" />
+        <span>Desa Tikusan</span>
+      </div>
+      <div class="spinner-border mt-2" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <a href="#home" class="btn btn-xl to-top btn-danger btn-lg link-scroll"
       ><i class="fas fa-angle-up"></i
     ></a>
     <nav
@@ -99,16 +105,14 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://www.bebasbayar.com/"
-                target="_blank"
-                >PPOB</a
-              >
-            </li>
+
             <li class="nav-item">
               <a class="nav-link link-scroll" href="#galeri">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-scroll" href="#ppob" target="_blank"
+                >PPOB</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link link-scroll" href="#kontak">Kontak</a>
@@ -540,6 +544,7 @@
         </div>
       </div>
     </section>
+
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
         fill="#eee"
@@ -825,7 +830,15 @@
         d="M0,288L120,245.3C240,203,480,117,720,112C960,107,1200,181,1320,218.7L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
       ></path>
     </svg>
-
+    <section id="ppob">
+      <div class="container">
+        <div class="title-section">PPOB</div>
+        <div class="content-section">
+          <iframe src="https://bebasbayar.com/" frameborder="0"></iframe>
+        </div>
+      </div>
+    </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#eee" fill-opacity="1" d="M0,32L120,64C240,96,480,160,720,154.7C960,149,1200,75,1320,37.3L1440,0L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
     <section id="kontak">
       <div class="container">
         <div class="title-section">KONTAK</div>

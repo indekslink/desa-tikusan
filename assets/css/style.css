@@ -48,6 +48,9 @@ section#visi .content-section {
   letter-spacing: 1.5px;
   text-align: center;
 }
+section#kontak {
+  background: #eee;
+}
 section#kontak ul {
   height: 100%;
   justify-content: space-evenly;
@@ -127,6 +130,10 @@ section#galeri .nav-link {
 section#galeri .nav-link:focus, section#galeri .nav-link:hover {
   font-weight: bold;
 }
+section#ppob iframe {
+  width: 100%;
+  height: 100vh;
+}
 
 a.parent-lightbox {
   height: 100%;
@@ -182,6 +189,40 @@ a.to-top i {
 }
 a.to-top.show {
   opacity: 1;
+}
+
+.loading {
+  position: fixed;
+  opacity: 1;
+  flex-direction: column;
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading .logo {
+  font-size: 40px;
+  font-family: "Fjalla One", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.loading .logo img {
+  width: 60px;
+  height: 60px;
+}
+.loading .logo span {
+  margin-left: 10px;
+}
+.loading.close {
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 body {

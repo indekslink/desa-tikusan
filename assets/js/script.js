@@ -19,7 +19,10 @@ function getWidthWindow(...func) {
 }
 
 window.onresize = () => getWidthWindow("realtimeHeightSlider");
-window.onload = () => getWidthWindow("realtimeHeightSlider");
+window.onload = () => {
+  document.querySelector(".loading").classList.add("close");
+  getWidthWindow("realtimeHeightSlider");
+};
 
 const linkScroll = document.querySelectorAll("a.link-scroll");
 linkScroll.forEach((link) => {
