@@ -23,7 +23,6 @@ section {
 }
 section#home .carousel-inner {
   background: #f8f9fa;
-  border-radius: 0 0 20% 20%;
 }
 section#home .carousel-inner img {
   width: 100%;
