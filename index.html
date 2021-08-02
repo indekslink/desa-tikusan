@@ -25,18 +25,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <!-- aos -->
-    <link rel="stylesheet" href="./assets/vendor/aos/aos.css" />
+    <!-- <link rel="stylesheet" href="./assets/vendor/aos/aos.css" /> -->
     <!-- My Css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Desa Tikusan</title>
   </head>
-  <body
-    style="position: relative"
-    data-bs-spy="scroll"
-    data-bs-target="#navbar"
-    data-bs-offset="100"
-  >
+  <body>
     <div class="loading">
       <div class="logo">
         <img src="./assets/image/logo-desa.png" alt="" />
@@ -79,7 +74,7 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a
-                class="nav-link active link-scroll"
+                class="nav-link active link-scroll my-scrollspy"
                 aria-current="page"
                 href="#home"
                 >Home</a
@@ -98,24 +93,35 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item link-scroll" href="#visi">Visi</a>
+                  <a class="dropdown-item link-scroll my-scrollspy" href="#visi"
+                    >Visi</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item link-scroll" href="#misi">Misi</a>
+                  <a class="dropdown-item link-scroll my-scrollspy" href="#misi"
+                    >Misi</a
+                  >
                 </li>
               </ul>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link link-scroll" href="#galeri">Galeri</a>
+              <a class="nav-link link-scroll my-scrollspy" href="#galeri"
+                >Galeri</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link link-scroll" href="#ppob" target="_blank"
+              <a
+                class="nav-link link-scroll my-scrollspy"
+                href="#ppob"
+                target="_blank"
                 >PPOB</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link link-scroll" href="#kontak">Kontak</a>
+              <a class="nav-link link-scroll my-scrollspy" href="#kontak"
+                >Kontak</a
+              >
             </li>
           </ul>
         </div>
@@ -838,7 +844,13 @@
         </div>
       </div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#eee" fill-opacity="1" d="M0,32L120,64C240,96,480,160,720,154.7C960,149,1200,75,1320,37.3L1440,0L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#eee"
+        fill-opacity="1"
+        d="M0,32L120,64C240,96,480,160,720,154.7C960,149,1200,75,1320,37.3L1440,0L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+      ></path>
+    </svg>
     <section id="kontak">
       <div class="container">
         <div class="title-section">KONTAK</div>
@@ -944,11 +956,11 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <!-- aos -->
-    <script src="./assets/vendor/aos/aos.js"></script>
+    <!-- <script src="./assets/vendor/aos/aos.js"></script> -->
 
     <!-- My Script -->
 
-    <script src="./assets/js/aos.js"></script>
+    <!-- <script src="./assets/js/aos.js"></script> -->
     <script src="./assets/js/script.js"></script>
 
     <!-- end -->

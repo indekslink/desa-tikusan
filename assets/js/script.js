@@ -32,7 +32,7 @@ linkScroll.forEach((link) => {
     const section = document.querySelector(href);
     if (section) {
       const scroll =
-        href == "#home" ? section.offsetTop : section.offsetTop + 40;
+        href == "#home" ? section.offsetTop - 100 : section.offsetTop - 20;
       window.scrollTo(0, scroll);
     }
   });
@@ -55,4 +55,29 @@ window.onscroll = () => {
   document
     .querySelector(".to-top")
     .classList.toggle("show", window.scrollY > 100);
+  myScrollspy(window.scrollY);
 };
+
+function myScrollspy(scroller) {
+  const menuScrollspy = document.querySelectorAll("a.my-scrollspy");
+  menuScrollspy.forEach((m) => {
+    let section = document.querySelector(`section${m.getAttribute("href")}`);
+    let offTop = section.offsetTop;
+    m.classList.remove("active");
+
+    let total = offTop + section.clientHeight;
+    if (scroller > offTop - 100 && scroller < total - 50) {
+      m.classList.add("active");
+      if (m.classList.contains("dropdown-item")) {
+        let menuDropdown = m.parentElement.parentElement.previousElementSibling;
+        menuDropdown.classList.add("active");
+      } else {
+        document
+          .querySelectorAll(".nav-link.dropdown-toggle")
+          .forEach((menuDropdown) => {
+            menuDropdown.classList.remove("active");
+          });
+      }
+    }
+  });
+}

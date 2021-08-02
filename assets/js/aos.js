@@ -27,6 +27,6 @@ kontak.forEach((m) => {
   m.dataset.aos = "fade-right";
 });
 
-AOS.init({
-  once: true,
-});
+// AOS.init({
+//   once: true,
+// });
