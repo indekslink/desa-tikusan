@@ -1,7 +1,7 @@
 const navbar = document.querySelector("nav");
-const imgSlider = document.querySelectorAll("#home .carousel-item img");
 document.getElementById("home").style.marginTop = navbar.clientHeight + "px";
 function realtimeHeightSlider(w) {
+  const imgSlider = document.querySelectorAll("#home .carousel-item img");
   imgSlider.forEach((img) => {
     const height = `calc(100vh - ${navbar.clientHeight}px)`;
     img.style.height = w > 767 ? height : "80vmin";
@@ -17,10 +17,18 @@ function getWidthWindow(...func) {
     });
   }
 }
-
+function closeLoader() {
+  const loader = document.querySelector(".loading");
+  loader.classList.add("close");
+  document.body.classList.remove("overflow-hidden");
+}
+function showLoader() {
+  const loader = document.querySelector(".loading");
+  loader.classList.remove("close");
+}
 window.onresize = () => getWidthWindow("realtimeHeightSlider");
 window.onload = () => {
-  document.querySelector(".loading").classList.add("close");
+  closeLoader();
   getWidthWindow("realtimeHeightSlider");
 };
 
@@ -62,22 +70,28 @@ function myScrollspy(scroller) {
   const menuScrollspy = document.querySelectorAll("a.my-scrollspy");
   menuScrollspy.forEach((m) => {
     let section = document.querySelector(`section${m.getAttribute("href")}`);
-    let offTop = section.offsetTop;
-    m.classList.remove("active");
+    if (section) {
+      let offTop = section.offsetTop;
+      m.classList.remove("active");
 
-    let total = offTop + section.clientHeight;
-    if (scroller > offTop - 100 && scroller < total - 50) {
-      m.classList.add("active");
-      if (m.classList.contains("dropdown-item")) {
-        let menuDropdown = m.parentElement.parentElement.previousElementSibling;
-        menuDropdown.classList.add("active");
-      } else {
-        document
-          .querySelectorAll(".nav-link.dropdown-toggle")
-          .forEach((menuDropdown) => {
-            menuDropdown.classList.remove("active");
-          });
+      let total = offTop + section.clientHeight;
+      if (scroller > offTop - 100 && scroller < total - 50) {
+        m.classList.add("active");
+        if (m.classList.contains("dropdown-item")) {
+          let menuDropdown =
+            m.parentElement.parentElement.previousElementSibling;
+          menuDropdown.classList.add("active");
+        } else {
+          document
+            .querySelectorAll(".nav-link.dropdown-toggle")
+            .forEach((menuDropdown) => {
+              menuDropdown.classList.remove("active");
+            });
+        }
       }
     }
   });
 }
+
+
+
