@@ -50,7 +50,7 @@ linkScroll.forEach((link) => {
 function elLightBox(src, idLightbox) {
   return `<a href="${src}"  data-fancybox="${idLightbox}" class="parent-lightbox"></a>`;
 }
-$("img.image-lightbox").each((i, el) => {
+$(".image-lightbox").each((i, el) => {
   let href = $(el).attr("src");
   let lightBoxId = $(el).data("lb-id");
 
@@ -91,4 +91,35 @@ function myScrollspy(scroller) {
       }
     }
   });
+}
+
+const BScarouselWithIndicator = document.querySelectorAll(
+  ".carousel.with-indicator"
+);
+
+if (BScarouselWithIndicator.length > 0) {
+  BScarouselWithIndicator.forEach((carousel) => {
+    // cek ada berapa jumlah gambar
+    const jumlahImg = carousel.children[0].children.length;
+    const idCarousel = carousel.getAttribute("id");
+    carousel.prepend(elIndicatorSlider(idCarousel, jumlahImg));
+  });
+}
+function elIndicatorSlider(target, count) {
+  let result = document.createElement("div");
+  result.classList.add("carousel-indicators");
+
+  let value = "";
+  for (let index = 0; index < count; index++) {
+    value += ` <button
+                    type="button"
+                    data-bs-target="#${target}"
+                    data-bs-slide-to="${index}"
+                    class="${index == 0 ? "active" : ""}"
+                    ${index == 0 ? 'aria-current="true"' : ""}>
+                    </button>`;
+  }
+
+  result.innerHTML = value;
+  return result;
 }

@@ -21,6 +21,17 @@
 section {
   overflow: hidden;
 }
+section#home .carousel-indicators button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: background 0.5s ease;
+  background-color: white;
+  opacity: 1;
+}
+section#home .carousel-indicators button.active {
+  background-color: black;
+}
 section#home .carousel-inner {
   background: #f8f9fa;
 }
