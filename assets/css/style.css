@@ -14,7 +14,7 @@
 #navbar a:not(.navbar-brand) {
   font-size: 14px;
 }
-#navbar a:not(.navbar-brand).active {
+#navbar a:not(.navbar-brand).active, #navbar a:not(.navbar-brand):hover {
   font-weight: bold;
 }
 

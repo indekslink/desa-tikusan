@@ -4,29 +4,33 @@ const misiItems = document.querySelectorAll("#misi .accordion-item");
 const galleryNavItem = document.querySelectorAll("#galeri .nav-item");
 const kontak = document.querySelectorAll("#kontak .list-group-item");
 
+const menuNavbar = document.querySelectorAll("nav.navbar ul li.nav-item");
 gallery.forEach((g, i) => {
-  g.dataset.aos = "flip-left";
-  g.dataset.aosDelay = i * 100;
+  g.dataset.aos = "fade-up";
 });
 
 titleSection.forEach((ts) => {
-  ts.dataset.aos = "fade-left";
+  ts.dataset.aos = "fade-up";
 });
 
 // misi content
 misiItems.forEach((m) => {
-  m.dataset.aos = "fade-right";
+  m.dataset.aos = "fade-up";
 });
 
 galleryNavItem.forEach((gn, i) => {
   gn.dataset.aos = "fade-up";
-  gn.dataset.aosDelay = i * 100;
 });
 
 kontak.forEach((m) => {
-  m.dataset.aos = "fade-right";
+  m.parentElement.dataset.aos = "fade-right";
+});
+menuNavbar.forEach((mn, i) => {
+  mn.dataset.aos = "fade-up";
+  mn.dataset.aosDelay = (i + 1) * 100;
 });
 
-// AOS.init({
-//   once: true,
-// });
+AOS.init({
+  disable: "tablet",
+  once: true,
+});
